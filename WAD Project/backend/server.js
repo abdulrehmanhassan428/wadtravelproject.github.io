@@ -73,10 +73,13 @@ app.post("/custom-trip", async (req, res) => {
     res.status(500).json({ message: "Customized trip failed" });
   }
 });
+
+
+app.get("/", (req, res) => {
+  res.send("Backend is running on Vercel");
+});
+
 module.exports = app;
 
 
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
-});
 
