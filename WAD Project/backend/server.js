@@ -8,7 +8,7 @@ require("./db");
 
 const User = require("./models/User");
 const Booking = require("./models/booking");
-const CustomizeTrip = require("./models/cutomizeTrip");
+const CustomizeTrip = require("./models/customizeTrip");
 
 const app = express();
 
@@ -87,3 +87,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server running on port", PORT);
 });
+
