@@ -8,7 +8,7 @@ require("./db");
 
 const User = require("./models/User");
 const Booking = require("./models/booking");
-const CustomizeTrip = require("./models/customizeTrip");
+const CustomizeTrip = require("./models/cutomizeTrip");
 
 const app = express();
 app.use(cors());
@@ -95,3 +95,4 @@ app.get("/", (req, res) => {
 });
 
 module.exports = app;
+
