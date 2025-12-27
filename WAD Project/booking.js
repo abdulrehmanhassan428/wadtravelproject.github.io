@@ -78,9 +78,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (isValid) {
-            alert("Booking Confirmed!");
-            window.location.href = "WadProject.html";
-        }
+    const data = {
+        packageName: fields.package.value,
+        departureCity: fields.departureCity.value,
+        departureDate: fields.departureDate.value,
+        groupSize: fields.groupSize.value,
+        fullName: fields.fullName.value,
+        phone: fields.phone.value,
+        cnic: fields.cnic.value,
+        totalPersons: fields.totalPersons.value,
+        totalPayment: fields.totalPayment.value,
+        paymentMethod: fields.paymentMethod.value
+    };
+
+    fetch("http://localhost:3000/book", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(result => {
+        alert(result.message);
+        window.location.href = "WadProject.html";
+    })
+    .catch(() => {
+        alert("Booking failed. Server error.");
+    });
+}
+
     });
 
 });
+
