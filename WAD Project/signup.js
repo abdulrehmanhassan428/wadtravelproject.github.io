@@ -1,3 +1,5 @@
+const BASE_URL = "https://wadtravelproject-production.up.railway.app";
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const usernameRegex = /^[a-zA-Z0-9_]{3,}$/;
@@ -39,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        
         if (!emailRegex.test(email.value.trim())) {
             emailError.textContent = "Please enter a valid email address.";
             isValid = false;
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             try {
-                const response = await fetch("http://localhost:3000/signup", {
+                const response = await fetch(`${BASE_URL}/signup`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
